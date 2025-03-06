@@ -1,0 +1,16 @@
+com\mycompany\soapclient\generated\wsProducto\ObtenerProductos.class
+com\mycompany\soapclient\generated\wsProducto\WsProducto_Service.class
+com\mycompany\soapclient\generated\HelloResponse.class
+com\mycompany\soapclient\generated\NuevoWS_Service.class
+com\mycompany\soapclient\generated\wsProducto\AgregarProductoResponse.class
+com\mycompany\soapclient\generated\wsProducto\WsProducto.class
+com\mycompany\soapclient\generated\wsProducto\ObjectFactory.class
+com\mycompany\soapclient\generated\wsProducto\Producto.class
+org\itson\soapclient\SOAPClient.class
+com\mycompany\soapclient\generated\ObjectFactory.class
+com\mycompany\soapclient\generated\wsProducto\AgregarProducto.class
+com\mycompany\soapclient\generated\wsProducto\ObtenerProductosResponse.class
+com\mycompany\soapclient\generated\Hello.class
+com\mycompany\soapclient\generated\wsProducto\package-info.class
+com\mycompany\soapclient\generated\NuevoWS.class
+com\mycompany\soapclient\generated\package-info.class

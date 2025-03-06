@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="wsProducto" targetNamespace="http://ws/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ws/" elementFormDefault="unqualified" targetNamespace="http://ws/" version="1.0">
+
+  <xs:element name="agregarProducto" type="tns:agregarProducto"/>
+
+  <xs:element name="agregarProductoResponse" type="tns:agregarProductoResponse"/>
+
+  <xs:element name="obtenerProductos" type="tns:obtenerProductos"/>
+
+  <xs:element name="obtenerProductosResponse" type="tns:obtenerProductosResponse"/>
+
+  <xs:complexType name="agregarProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="producto" type="tns:producto"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="producto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+      <xs:element minOccurs="0" name="categoria" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="agregarProductoResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="obtenerProductos">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="obtenerProductosResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:producto"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="agregarProductoResponse">
+    <wsdl:part element="tns:agregarProductoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="agregarProducto">
+    <wsdl:part element="tns:agregarProducto" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerProductosResponse">
+    <wsdl:part element="tns:obtenerProductosResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerProductos">
+    <wsdl:part element="tns:obtenerProductos" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="wsProducto">
+    <wsdl:operation name="agregarProducto">
+      <wsdl:input message="tns:agregarProducto" name="agregarProducto">
+    </wsdl:input>
+      <wsdl:output message="tns:agregarProductoResponse" name="agregarProductoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerProductos">
+      <wsdl:input message="tns:obtenerProductos" name="obtenerProductos">
+    </wsdl:input>
+      <wsdl:output message="tns:obtenerProductosResponse" name="obtenerProductosResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsProductoSoapBinding" type="tns:wsProducto">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="agregarProducto">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="agregarProducto">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="agregarProductoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerProductos">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="obtenerProductos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="obtenerProductosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsProducto">
+    <wsdl:port binding="tns:wsProductoSoapBinding" name="wsProductoPort">
+      <soap:address location="http://localhost:8080/wSOAP3/wsProducto"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
